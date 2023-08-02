@@ -53,12 +53,18 @@ function playRound(playerSelection, computerSelection) {
    
 
 
-function game(playerSelection, computerSelection) {
-    for (let i = 1; i <= 5; ++i) {
-        playRound(i);
-    }
+function game() {
+    playRound(playerSelection, computerSelection)
+    playRound(playerSelection, computerSelection)
+    playRound(playerSelection, computerSelection)
+    playRound(playerSelection, computerSelection)
+    playRound(playerSelection, computerSelection)
 }
+
+
 
 const playerSelection = prompt('Select you weapon: ');
 const computerSelection = result;
 console.log(playRound(playerSelection, computerSelection));
+
+game()
