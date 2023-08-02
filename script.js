@@ -27,7 +27,7 @@ function playRound(playerSelection, computerSelection) {
         console.log("You lost! Paper beats rock!");
     }
 
-    //option for choosing paper
+    //options for choosing paper
     if (playerSelection == 'Paper' && computerSelection == 'Rock'){
         console.log("You won! Paper beats rock!");
     }
@@ -36,6 +36,18 @@ function playRound(playerSelection, computerSelection) {
     }
     else if (playerSelection == 'Paper' && computerSelection == 'Scissors'){
         console.log("You lost! Scissors beats paper!")
+    }
+
+    //options for choosing scissors
+
+    if(playerSelection == 'Scissors' && computerSelection == 'Paper'){
+        console.log("You won! Scissors beat paper!");
+    }
+    else if (playerSelection == 'Scissors' && computerSelection == 'Scissors'){
+        console.log("Tied! Scissors are equal to scissors!");
+    }
+    else if (playerSelection == 'Scissors' && computerSelection == 'Rock'){
+        console.log("You lost! Rock beats scissors!");
     }
   }
    
