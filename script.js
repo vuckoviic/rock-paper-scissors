@@ -1,21 +1,23 @@
-function getComputerChoice(arr) {
-
-    // get random index value
-    const randomIndex = Math.floor(Math.random() * arr.length);
-
-    // get random item
-    const item = arr[randomIndex];
-
-    return item;
-}
-
-const choice = ['Rock' , 'Paper' , 'Scissors'];
-
-const result = getComputerChoice(choice);
-console.log(result);
-
 function playRound(playerSelection, computerSelection) {
+    // function for getting computer choice randomly
+    function getComputerChoice(arr) {
+
+        // get random index value
+        const randomIndex = Math.floor(Math.random() * arr.length);
     
+        // get random item
+        const item = arr[randomIndex];
+    
+        return item;
+    }
+    
+    const choice = ['Rock' , 'Paper' , 'Scissors'];
+    
+    const result = getComputerChoice(choice);
+    
+    playerSelection = prompt('Select you weapon: ');
+    computerSelection = result;
+
     // options for choosing rock
     if (playerSelection == 'Rock' && computerSelection == 'Scissors'){
         console.log("You won! Rock beats scissors!");
@@ -51,20 +53,12 @@ function playRound(playerSelection, computerSelection) {
     }
 }
    
-
-
 function game() {
-    playRound(playerSelection, computerSelection)
-    playRound(playerSelection, computerSelection)
-    playRound(playerSelection, computerSelection)
-    playRound(playerSelection, computerSelection)
-    playRound(playerSelection, computerSelection)
+    playRound()
+    playRound()
+    playRound()
+    playRound()
+    playRound()
 }
-
-
-
-const playerSelection = prompt('Select you weapon: ');
-const computerSelection = result;
-console.log(playRound(playerSelection, computerSelection));
 
 game()
