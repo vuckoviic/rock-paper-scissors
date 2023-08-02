@@ -49,8 +49,16 @@ function playRound(playerSelection, computerSelection) {
     else if (playerSelection == 'Scissors' && computerSelection == 'Rock'){
         console.log("You lost! Rock beats scissors!");
     }
-  }
+}
    
-  const playerSelection = prompt('Select you weapon: ');
-  const computerSelection = result;
-  console.log(playRound(playerSelection, computerSelection));
+
+
+function game(playerSelection, computerSelection) {
+    for (let i = 1; i <= 5; ++i) {
+        playRound(i);
+    }
+}
+
+const playerSelection = prompt('Select you weapon: ');
+const computerSelection = result;
+console.log(playRound(playerSelection, computerSelection));
