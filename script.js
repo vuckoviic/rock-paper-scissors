@@ -28,8 +28,6 @@ function playRound(playerSelection, computerSelection) {
     }
     else if (playerSelection == 'ROCK' && computerSelection == 'Rock'){
         console.log("Tied! Rock is equal to rock!");
-        playerScore = ++playerScore;
-        computerScore = ++computerScore;
     }
     else if (playerSelection == 'ROCK' && computerSelection == 'Paper'){
         console.log("You lost! Paper beats rock!");
@@ -43,8 +41,6 @@ function playRound(playerSelection, computerSelection) {
     }
     else if (playerSelection == 'PAPER' && computerSelection == 'Paper'){
         console.log("Tied! Paper is equal to paper!");
-        playerScore = ++playerScore;
-        computerScore = ++computerScore;
     }
     else if (playerSelection == 'PAPER' && computerSelection == 'Scissors'){
         console.log("You lost! Scissors beats paper!")
@@ -59,8 +55,6 @@ function playRound(playerSelection, computerSelection) {
     }
     else if (playerSelection == 'SCISSORS' && computerSelection == 'Scissors'){
         console.log("Tied! Scissors are equal to scissors!");
-        playerScore = ++playerScore;
-        computerScore = ++computerScore;
     }
     else if (playerSelection == 'SCISSORS' && computerSelection == 'Rock'){
         console.log("You lost! Rock beats scissors!");
