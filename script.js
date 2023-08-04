@@ -64,11 +64,13 @@ function playRound(playerSelection, computerSelection) {
 }
    
 function game() {
+while (playerScore < 5 || computerScore < 5){
     playRound()
-    playRound()
-    playRound()
-    playRound()
-    playRound()
+    if (playerScore == 5 || computerScore == 5){
+        break;
+    }
+}
+     
 }
 
 game()
