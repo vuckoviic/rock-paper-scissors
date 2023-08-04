@@ -1,3 +1,6 @@
+let playerScore = 0;
+let computerScore = 0;
+
 function playRound(playerSelection, computerSelection) {
     // function for getting computer choice randomly
     function getComputerChoice(arr) {
@@ -17,9 +20,6 @@ function playRound(playerSelection, computerSelection) {
     
     playerSelection = prompt('Select you weapon: ');
     computerSelection = result;
-
-    let playerScore = 0;
-    let computerScore = 0;
 
     // options for choosing rock
     if (playerSelection == 'Rock' && computerSelection == 'Scissors'){
