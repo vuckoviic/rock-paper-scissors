@@ -1,6 +1,30 @@
 let playerScore = 0;
 let computerScore = 0;
 
+
+
+
+
+function getPlayerSelection(playerSelection){
+
+    if(document.getElementById('buttonR').clicked === true)
+    {
+        playerSelection = 'ROCK';
+    }
+
+    else if(document.getElementById('buttonP').clicked === true){
+        playerSelection = 'PAPER';
+    }
+
+    else if(document.getElementById('buttonS').clicked === true){
+        playerSelection = 'SCISSORS';
+    }
+        console.log(playerSelection);
+}
+
+const btnR = document.querySelector('#buttonR');
+btnR.addEventListener('click' , getPlayerSelection());
+
 function playRound(playerSelection, computerSelection) {
     // function for getting computer choice randomly
     function getComputerChoice(arr) {
@@ -18,8 +42,10 @@ function playRound(playerSelection, computerSelection) {
     
     const result = getComputerChoice(choice);
     
-    playerSelection = prompt('Select you weapon: ').toUpperCase();
+    playerSelection = getPlayerSelection();
     computerSelection = result;
+
+
 
     // options for choosing rock
     if (playerSelection == 'ROCK' && computerSelection == 'Scissors'){
@@ -62,19 +88,21 @@ function playRound(playerSelection, computerSelection) {
     }
     console.log(`Score is now: ${playerScore} : ${computerScore}`);
 }
+
+
    
-function game() {
-while (playerScore < 5 || computerScore < 5){
-    playRound()
-    if (playerScore == 5 || computerScore == 5){
-        break;
+/*function game() {
+    while (playerScore < 5 || computerScore < 5){
+        playRound()
+        if (playerScore == 5 || computerScore == 5){
+            break;
+        }
     }
-}
-     
+    
 }
 
 game()
-
+*/
 if (playerScore > computerScore) {
     console.log("You won the game!");
 }
