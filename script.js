@@ -3,29 +3,28 @@ let computerScore = 0;
 
 
 
+function playRound(computerSelection, playerSelection) {
 
+    function getPlayerSelection(){
 
-function getPlayerSelection(playerSelection){
-
-    if(document.getElementById('buttonR').clicked === true)
-    {
-        playerSelection = 'ROCK';
+        document.querySelector("#buttonR").onclick = function() {
+            playerSelection = 'ROCK';
+        }
+            
+        document.querySelector("#buttonP").onclick = function() {
+            playerSelection = 'PAPER';
+        }
+        
+        document.querySelector("#buttonS").onclick = function() {
+            playerSelection = 'SCISSORS';
+        }
+        return playerSelection;
     }
+    
+getPlayerSelection();
 
-    else if(document.getElementById('buttonP').clicked === true){
-        playerSelection = 'PAPER';
-    }
 
-    else if(document.getElementById('buttonS').clicked === true){
-        playerSelection = 'SCISSORS';
-    }
-        console.log(playerSelection);
-}
 
-const btnR = document.querySelector('#buttonR');
-btnR.addEventListener('click' , getPlayerSelection());
-
-function playRound(playerSelection, computerSelection) {
     // function for getting computer choice randomly
     function getComputerChoice(arr) {
 
@@ -42,8 +41,10 @@ function playRound(playerSelection, computerSelection) {
     
     const result = getComputerChoice(choice);
     
-    playerSelection = getPlayerSelection();
     computerSelection = result;
+
+    console.log(playerSelection);
+    console.log(computerSelection);
 
 
 
@@ -89,7 +90,7 @@ function playRound(playerSelection, computerSelection) {
     console.log(`Score is now: ${playerScore} : ${computerScore}`);
 }
 
-
+playRound();
    
 /*function game() {
     while (playerScore < 5 || computerScore < 5){
@@ -101,8 +102,8 @@ function playRound(playerSelection, computerSelection) {
     
 }
 
-game()
-*/
+game()*/
+
 if (playerScore > computerScore) {
     console.log("You won the game!");
 }
