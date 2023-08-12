@@ -21,7 +21,6 @@ function playRound(computerSelection, playerSelection) {
         return playerSelection;
     }
     
-getPlayerSelection();
 
 
 
@@ -40,7 +39,9 @@ getPlayerSelection();
     const choice = ['Rock' , 'Paper' , 'Scissors'];
     
     const result = getComputerChoice(choice);
+    const resultP = getPlayerSelection();
     
+    playerSelection = resultP;
     computerSelection = result;
 
     console.log(playerSelection);
