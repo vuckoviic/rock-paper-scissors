@@ -2,32 +2,33 @@ let playerScore = 0;
 let computerScore = 0;
 
 
-const btnR = document.querySelector('#buttonR');
+/*const btnR = document.querySelector('#buttonR');
 btnR.addEventListener('click', playRound);
 
 const btnP = document.querySelector('#buttonP');
-btnR.addEventListener('click', playRound);
+btnP.addEventListener('click', playRound);
    
 const btnS = document.querySelector('#buttonS');
-btnR.addEventListener('click', playRound);
+btnS.addEventListener('click', playRound);*/
 
+let playerSelection = '';
 
-function playRound(computerSelection, playerSelection) {
+document.getElementById('buttonR').addEventListener('click', function() {
+    playerSelection = 'ROCK';
+    playRound();
+});
 
-    function getPlayerSelection(){
+document.getElementById('buttonP').addEventListener('click', function() {
+    playerSelection = 'PAPER';
+    playRound();
+});
 
-        if(document.getElementById('buttonR').clicked == true){
-            playerSelection = 'ROCK';
-        }
-        
-        else if(document.getElementById('buttonP').clicked == true){
-            playerSelection = 'PAPER';
-        }
-        
-        else if(document.getElementById('buttonS').clicked == true){
-            playerSelection = 'SCISSORS';
-        }
-    }
+document.getElementById('buttonS').addEventListener('click', function() {
+    playerSelection = 'SCISSORS';
+    playRound();
+});
+    
+function playRound(computerSelection) {
 
     // function for getting computer choice randomly
     function getComputerChoice(arr) {
@@ -43,16 +44,9 @@ function playRound(computerSelection, playerSelection) {
     
     const choice = ['Rock' , 'Paper' , 'Scissors'];
     
-    const result = getComputerChoice(choice);
-    const resultP = getPlayerSelection();
-    
-    playerSelection = resultP;
+    const result = getComputerChoice(choice); 
+
     computerSelection = result;
-
-    console.log(playerSelection);
-    console.log(computerSelection);
-
-
 
     // options for choosing rock
     if (playerSelection == 'ROCK' && computerSelection == 'Scissors'){
@@ -121,4 +115,3 @@ function getResult(){
 }
 
 game()*/
-
