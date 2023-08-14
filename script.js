@@ -2,27 +2,32 @@ let playerScore = 0;
 let computerScore = 0;
 
 
+const btnR = document.querySelector('#buttonR');
+btnR.addEventListener('click', playRound);
+
+const btnP = document.querySelector('#buttonP');
+btnR.addEventListener('click', playRound);
+   
+const btnS = document.querySelector('#buttonS');
+btnR.addEventListener('click', playRound);
+
 
 function playRound(computerSelection, playerSelection) {
 
     function getPlayerSelection(){
 
-        document.querySelector("#buttonR").onclick = function() {
+        if(document.getElementById('buttonR').clicked == true){
             playerSelection = 'ROCK';
         }
-            
-        document.querySelector("#buttonP").onclick = function() {
+        
+        else if(document.getElementById('buttonP').clicked == true){
             playerSelection = 'PAPER';
         }
         
-        document.querySelector("#buttonS").onclick = function() {
+        else if(document.getElementById('buttonS').clicked == true){
             playerSelection = 'SCISSORS';
         }
-        return playerSelection;
     }
-    
-
-
 
     // function for getting computer choice randomly
     function getComputerChoice(arr) {
@@ -91,8 +96,20 @@ function playRound(computerSelection, playerSelection) {
     console.log(`Score is now: ${playerScore} : ${computerScore}`);
 }
 
-playRound();
-   
+function getResult(){
+    if (playerScore > computerScore) {
+        console.log("You won the game!");
+    }
+    
+    else if (playerScore == computerScore){
+        console.log("Game is tied! No winner!");
+    }
+    
+    else {
+        console.log("You lost the game!");
+    }
+}
+
 /*function game() {
     while (playerScore < 5 || computerScore < 5){
         playRound()
@@ -100,19 +117,8 @@ playRound();
             break;
         }
     }
-    
+    getResult();
 }
 
 game()*/
 
-if (playerScore > computerScore) {
-    console.log("You won the game!");
-}
-
-else if (playerScore == computerScore){
-    console.log("Game is tied! No winner!");
-}
-
-else {
-    console.log("You lost the game!");
-}
