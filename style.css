@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(255, 237, 155);
+    background-color: rgb(255, 243, 192);
     font-family: cursive;
 }
 
@@ -10,10 +10,24 @@ h1{
     font-size: 38px;
 }
 
+.introduction{
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+h2{
+    color:rgb(72, 134, 0);
+    display: flex;
+    justify-content: center;
+    font-size: 38px;
+}
+
 h3{
     color:rgb(255, 154, 3);
     display: flex;
     justify-content: center;
-    font-size: 18px;
+    font-size: 20px;
     margin-top: 5px;
+    margin-bottom: 5px;
 }   
