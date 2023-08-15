@@ -1,32 +1,13 @@
 let playerScore = 0;
 let computerScore = 0;
 
-
-/*const btnR = document.querySelector('#buttonR');
-btnR.addEventListener('click', playRound);
-
-const btnP = document.querySelector('#buttonP');
-btnP.addEventListener('click', playRound);
-   
-const btnS = document.querySelector('#buttonS');
-btnS.addEventListener('click', playRound);*/
-
 let playerSelection = '';
 
-document.getElementById('buttonR').addEventListener('click', function() {
-    playerSelection = 'ROCK';
-    playRound();
-});
 
-document.getElementById('buttonP').addEventListener('click', function() {
-    playerSelection = 'PAPER';
-    playRound();
-});
 
-document.getElementById('buttonS').addEventListener('click', function() {
-    playerSelection = 'SCISSORS';
-    playRound();
-});
+
+
+
     
 function playRound(computerSelection) {
 
@@ -104,14 +85,38 @@ function getResult(){
     }
 }
 
-/*function game() {
-    while (playerScore < 5 || computerScore < 5){
-        playRound()
-        if (playerScore == 5 || computerScore == 5){
-            break;
-        }
+document.getElementById('buttonR').addEventListener('click', function() {
+    playerSelection = 'ROCK';
+    playRound();
+    if (playerScore == 5 || computerScore == 5){
+        getResult();
+        document.getElementById("buttonR").disabled = true;
+        document.getElementById("buttonP").disabled = true;
+        document.getElementById("buttonS").disabled = true;
     }
-    getResult();
-}
+});
 
-game()*/
+document.getElementById('buttonP').addEventListener('click', function() {
+    playerSelection = 'PAPER';
+    playRound();
+    if (playerScore == 5 || computerScore == 5){
+        getResult();
+        document.getElementById("buttonR").disabled = true;
+        document.getElementById("buttonP").disabled = true;
+        document.getElementById("buttonS").disabled = true;
+    }
+});
+
+document.getElementById('buttonS').addEventListener('click', function() {
+    playerSelection = 'SCISSORS';
+    playRound();
+    if (playerScore == 5 || computerScore == 5){
+        getResult();
+        document.getElementById("buttonR").disabled = true;
+        document.getElementById("buttonP").disabled = true;
+        document.getElementById("buttonS").disabled = true;
+    }
+});
+
+
+    
