@@ -6,6 +6,8 @@ let playerSelection = '';
 const rndWnr = document.getElementById('rndWnr');
 const gmWnr = document.getElementById('gmWnr');
 
+const playAgainLink = document.getElementById("playAgain");
+
 const plyrScore = document.getElementById('playerScoreNum');
 const cmptrScore = document.getElementById('computerScoreNum');
 
@@ -90,8 +92,9 @@ function playRound(computerSelection) {
 function getResult(){
     if (playerScore > computerScore) {
         gmWnr.style.color = 'green';
+        playAgainLink.style.color = 'green';
         gmWnr.textContent = 'You won the game!';
-        console.log("You won the game!");
+        console.log("You won the game!"); 
     }
     //this is useless, but I will keep it here
     else if (playerScore == computerScore){
@@ -102,10 +105,18 @@ function getResult(){
     
     else {
         gmWnr.style.color = 'red';
+        playAgainLink.style.color = 'red';
         gmWnr.textContent = 'You lost the game!';
         console.log("You lost the game!");
     }
+    playAgainLink.style.display = "inline"; // Display the "Play Again" link
+    playAgainLink.textContent = 'Play again?';
+    playAgainLink.addEventListener("click", function() {
+        location.reload(); // Reload the page when the link is clicked
+});
 }
+
+
 
 document.getElementById('buttonR').addEventListener('click', function() {
     playerSelection = 'ROCK';
@@ -139,4 +150,3 @@ document.getElementById('buttonS').addEventListener('click', function() {
         document.getElementById("buttonS").disabled = true;
     }
 });
-   
