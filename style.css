@@ -68,6 +68,11 @@ h3{
     width: 240px; 
 }
 
+button:hover{
+    background-color: rgb(25, 0, 167);
+    transition: 0.6s;
+}
+
 .score{
     display: flex;
     align-items: flex-start;
@@ -95,4 +100,17 @@ h3{
     font-size: 24px;
     color: rgb(255, 85, 85);
     font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#computerScoreNum,
+#playerScoreNum{
+    display: flex;
+    justify-content: center;
+}
+
+
+#playerScoreNum p,
+#computerScoreNum p{
+    margin: 0;
 }
