@@ -4,7 +4,11 @@ let computerScore = 0;
 let playerSelection = '';
 
 const rndWnr = document.getElementById('rndWnr');
-    
+const gmWnr = document.getElementById('gmWnr');
+
+const plyrScore = document.getElementById('playerScoreNum');
+const cmptrScore = document.getElementById('computerScoreNum');
+
 function playRound(computerSelection) {
 
     // function for getting computer choice randomly
@@ -30,14 +34,16 @@ function playRound(computerSelection) {
         rndWnr.textContent = "You won! Rock beats scissors!";
         console.log("You won! Rock beats scissors!");
         playerScore = ++playerScore;
+        plyrScore.textContent = playerScore;
     }
     else if (playerSelection == 'ROCK' && computerSelection == 'Rock'){
         console.log("Tied! Rock is equal to rock!");
-        rndWnr.textContent = 'You won! Rock beats scissors!';
+        rndWnr.textContent = 'Tied! Rock is equal to rock!';
     }
     else if (playerSelection == 'ROCK' && computerSelection == 'Paper'){
         console.log("You lost! Paper beats rock!");
         computerScore = ++computerScore;
+        cmptrScore.textContent = computerScore;
         rndWnr.textContent = 'You lost! Paper beats rock!';
     }
 
@@ -45,6 +51,7 @@ function playRound(computerSelection) {
     if (playerSelection == 'PAPER' && computerSelection == 'Rock'){
         console.log("You won! Paper beats rock!");
         playerScore = ++playerScore;
+        plyrScore.textContent = playerScore;
         rndWnr.textContent = 'You won! Paper beats rock!';
     }
     else if (playerSelection == 'PAPER' && computerSelection == 'Paper'){
@@ -54,6 +61,7 @@ function playRound(computerSelection) {
     else if (playerSelection == 'PAPER' && computerSelection == 'Scissors'){
         console.log("You lost! Scissors beats paper!")
         computerScore = ++computerScore;
+        cmptrScore.textContent = computerScore;
         rndWnr.textContent = 'You lost! Scissors beats paper!';
     }
     
@@ -63,6 +71,7 @@ function playRound(computerSelection) {
     if(playerSelection == 'SCISSORS' && computerSelection == 'Paper'){
         console.log("You won! Scissors beat paper!");
         playerScore = ++playerScore;
+        plyrScore.textContent = playerScore;
         rndWnr.textContent = 'You won! Scissors beat paper!';
     }
     else if (playerSelection == 'SCISSORS' && computerSelection == 'Scissors'){
@@ -72,6 +81,7 @@ function playRound(computerSelection) {
     else if (playerSelection == 'SCISSORS' && computerSelection == 'Rock'){
         console.log("You lost! Rock beats scissors!");
         computerScore = ++computerScore;
+        cmptrScore.textContent = computerScore;
         rndWnr.textContent = 'You lost! Rock beats scissors!';
     }
     console.log(`Score is now: ${playerScore} : ${computerScore}`);
@@ -79,14 +89,20 @@ function playRound(computerSelection) {
 
 function getResult(){
     if (playerScore > computerScore) {
+        gmWnr.style.color = 'green';
+        gmWnr.textContent = 'You won the game!';
         console.log("You won the game!");
     }
-    
+    //this is useless, but I will keep it here
     else if (playerScore == computerScore){
+        gmWnr.style.color = 'rgb(25, 0, 167)';
+        gmWnr.textContent = 'Game is tied! No winner!';
         console.log("Game is tied! No winner!");
     }
     
     else {
+        gmWnr.style.color = 'red';
+        gmWnr.textContent = 'You lost the game!';
         console.log("You lost the game!");
     }
 }
@@ -123,6 +139,4 @@ document.getElementById('buttonS').addEventListener('click', function() {
         document.getElementById("buttonS").disabled = true;
     }
 });
-
-
-    
+   

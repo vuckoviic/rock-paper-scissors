@@ -107,10 +107,29 @@ button:hover{
 #playerScoreNum{
     display: flex;
     justify-content: center;
+    margin: 0px
 }
 
-
-#playerScoreNum p,
-#computerScoreNum p{
+#roundWinner{
+    display: flex;
+    justify-content: center;
     margin: 0;
+}
+
+#rndWnr{
+    color: rgb(25, 0, 167);
+    font-size: 28px;
+    margin-top: 25px;
+    margin-bottom: 5px;
+}
+
+#gameWinner{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+#gmWnr{
+    margin: 5px;
+    font-size: 34px;
 }
